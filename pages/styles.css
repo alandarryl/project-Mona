@@ -1,0 +1,199 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* navbar styling */
+
+#header{
+    width: 100%;
+    height: 100%;
+}
+
+.navbar{
+    position: relative;
+    width: 100%;
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    color: #fff;
+}
+
+.ui{
+    display: none;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.navbar ul li a{
+    color: #fff;
+    font-size: 19px;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar ul li a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 9px;
+    background-color: yellow;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.6s ease-in-out;
+}
+
+.navbar ul li:hover a::after{
+    width: 100%;
+}
+
+/* navbar media query */
+
+@media (max-width: 768px){
+
+
+    .navbar ul{
+        position: absolute;
+        z-index: 1;
+        top: -230px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+        padding: 0;
+        height: 0;
+        background: yellowgreen;
+        visibility: hidden;
+        transition: height 0.3s, visibility 0.5s;
+    }
+
+    .navbar ul.show{
+        top: 0;
+        height: 220px;
+        visibility: visible;
+    }
+
+    .ui{
+        display: block;        
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+
+    .navbar ul .close{
+        position: absolute;
+        top: 20px;
+        background: red;
+        border-radius: 50%;
+        padding: 12px;
+    }
+
+    /* .navbar .open{
+
+    } */
+
+
+
+
+
+}
+
+
+
+/* banner styling */
+
+.banner{
+    position: relative;
+}
+
+.banner-items {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-item{
+    min-width: 100%; /* Ensure each item takes up the full viewport width */
+    height: 100%; /* Ensure the item is as tall as the container */
+    position: relative;
+    background: blue;
+}
+
+.banner-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-item .banner-content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    text-align: center;
+}
+
+.banner .navigation-button{
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.navigation-button .next,
+.navigation-button .prev{
+    cursor: pointer;
+    border: none;
+    background: green;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+
+
+.banner-content h2{
+    font-size: 70px;
+}
+
+.banner-content p{
+    font-size: 35px;
+}
+
+
+
+
+
+
+
+
+
