@@ -52,20 +52,19 @@ function closeNav(){
 
 
 let currentIndex = 0;
-const bannerItems = document.querySelectorAll('.banner-item');
-const totalItems = bannerItems.length;
+const bannerItems = document.querySelector('.banner-items');
+const totalItems = document.querySelectorAll('.banner-item').length;
 
 function showSlide(index) {
     if (index >= totalItems) {
-        currentIndex = 0;
+        currentIndex = 0; // Go back to the first slide
     } else if (index < 0) {
-        currentIndex = totalItems - 1;
+        currentIndex = totalItems - 1; // Go to the last slide
     } else {
         currentIndex = index;
     }
-
-    // Move the slider by translating the container to the left
-    document.querySelector('.banner-items').style.transform = `translateX(-${currentIndex * 100}%)`;
+    // Move the banner-items container to show the correct slide
+    bannerItems.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 function next() {
@@ -75,11 +74,6 @@ function next() {
 function previous() {
     showSlide(currentIndex - 1);
 }
-
-// Auto-slide every 5 seconds
-setInterval(() => {
-    next();
-}, 5000);
 
 
 

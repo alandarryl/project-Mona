@@ -128,32 +128,31 @@ a{
 
 /* banner styling */
 
-.banner{
+
+.banner {
     position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflow for the slider effect */
 }
 
 .banner-items {
     display: flex;
-    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth transition between slides */
+}
+
+.banner-item {
+    min-width: 100%; /* Ensure each banner takes up 100% of the container's width */
     height: 90vh;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-}
-
-.banner-item{
-    min-width: 100%; /* Ensure each item takes up the full viewport width */
-    height: 100%; /* Ensure the item is as tall as the container */
     position: relative;
-    background: blue;
 }
 
-.banner-item img{
+.banner-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.banner-item .banner-content{
+.banner-item .banner-content {
     position: absolute;
     left: 0;
     right: 0;
@@ -161,7 +160,7 @@ a{
     text-align: center;
 }
 
-.banner .navigation-button{
+.banner .navigation-button {
     position: absolute;
     width: 100%;
     top: 40%;
@@ -171,7 +170,7 @@ a{
 }
 
 .navigation-button .next,
-.navigation-button .prev{
+.navigation-button .prev {
     cursor: pointer;
     border: none;
     background: green;
@@ -179,15 +178,14 @@ a{
     padding: 12px;
 }
 
-
-
-.banner-content h2{
+.banner-content h2 {
     font-size: 70px;
 }
 
-.banner-content p{
+.banner-content p {
     font-size: 35px;
 }
+
 
 
 
