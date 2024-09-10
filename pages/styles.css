@@ -203,26 +203,35 @@ a{
     content: "";
     position: absolute;
     width: 150px;
-    left: 40%;
+    left: 50%;
     bottom: -5px;
-    height: 10px;
+    height: 5px;
     background: yellowgreen;
 }
 
 
 /* product card */
 
+#product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
 .product-cards{
     display: flex;
-    margin-left: 50px;
-    margin-right: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+
 }
 
 .product-cards .card{
-    width: 300px;
+    width: 420px;
     border-radius: 7px;
     border: 3px solid #eee;
-    margin: 25px;
 }
 
 .card .card-image{
@@ -263,6 +272,23 @@ a{
 
 .card-content .btn:hover{
     background: #cfcfcf;
+}
+
+
+
+@media (max-width: 768px){
+
+
+    .product-cards{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .product-cards .card{
+        min-width: 350px;
+    }
+
+
 }
 
 
