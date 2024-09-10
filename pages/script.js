@@ -136,7 +136,7 @@ productList.forEach(product => {
     let cardButton = document.createElement('button');
     cardButton.textContent = 'Voir plus';
     cardButton.className="btn";
-    cardButton.addEventListener("click", displayPopup);
+    // cardButton.addEventListener("click", displayPopup);
     cardContent.appendChild(cardButton);
 
     // function displayPopup() {
