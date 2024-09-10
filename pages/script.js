@@ -108,26 +108,40 @@ productList.forEach(product => {
 
 
 
-
-
-
-
 // second part of the card div, card content
     // create a card content div and append as a child of card
 
+    let cardContent = document.createElement('div');
+    cardContent.className = 'card-content';
+    card.appendChild(cardContent);
 
 
     // create a h2 element and append as child of card content
 
+    let cardTitle = document.createElement('h2');
+    cardTitle.textContent = product.title;
+    cardContent.appendChild(cardTitle);
 
 
     // create a p element and append as of card content
+
+    let cardDescription = document.createElement('p');
+    cardDescription.textContent = product.description;
+    cardContent.appendChild(cardDescription);
 
 
 
     // create a button element and append as child of card content
 
+    let cardButton = document.createElement('button');
+    cardButton.textContent = 'Voir plus';
+    cardButton.className="btn";
+    cardButton.addEventListener("click", displayPopup);
+    cardContent.appendChild(cardButton);
 
+    // function displayPopup() {
+    //     console.log(product.description)
+    // }
 
 
 
