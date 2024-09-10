@@ -1,4 +1,7 @@
 
+// navigation bar
+
+
 let nav = document.getElementById("navbar-content");
 
 function openNav(){
@@ -12,44 +15,7 @@ function closeNav(){
 }
 
 
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     let currentIndex = 0;
-//     const slides = document.querySelectorAll('.banner-items');
-//     const totalSlides = slides.length;
-
-//     function showSlide(index) {
-//         slides.forEach((slide, i) => {
-//             slide.style.display = i === index ? 'block' : 'none';
-//         });
-//     }
-
-//     function nextSlide() {
-//         currentIndex = (currentIndex + 1) % totalSlides;
-//         showSlide(currentIndex);
-//     }
-
-//     function prevSlide() {
-//         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-//         showSlide(currentIndex);
-//     }
-
-//     // Initialize the first slide
-//     showSlide(currentIndex);
-
-//     // Attach event listeners to buttons
-//     document.querySelector('.next').addEventListener('click', nextSlide);
-//     document.querySelector('.prev').addEventListener('click', prevSlide);
-
-//     // Optionally, auto-slide every 5 seconds
-//     setInterval(nextSlide, 5000);
-// });
-
+// banner slider 
 
 let currentIndex = 0;
 const bannerItems = document.querySelector('.banner-items');
