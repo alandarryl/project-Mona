@@ -9,6 +9,9 @@ body{
     width: 100%;
     height: 100%;
     background: #f8f7f4;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }
 
 
@@ -291,5 +294,97 @@ a{
 
 
 }
+
+/* POPUP CARD STYLING  */
+
+
+#product-popup{
+    position: absolute;
+    width: 90%;
+    /* display: none; */
+    background-color: gray;
+    padding: 12px;
+    height: 80vh;
+}
+
+.popup-card{
+    width: 100%;
+    position: relative;
+    background: yellow;
+    display: flex;
+    height: 100%;
+}
+
+.close-popup{
+    position: absolute;
+    background: rebeccapurple;
+    padding: 15px;
+    color: #fff;
+    border-radius: 50%;
+    right: -20px;
+    top: -20px;
+    cursor: pointer;
+}
+
+.image-popup, .popup-content{
+    flex-basis: 50%;
+    background-color:green;
+}
+
+.popup-card .image-popup{
+    background: yellow;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-image{
+    width: 100%;
+    height: 75%;
+    background-color: blue;
+    margin-bottom: 5%;
+    object-fit: cover;
+}
+
+.main-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-image{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    background: blueviolet;
+    height: 20%;
+    width: 100%;
+}
+
+.sub-image .image-item{
+    cursor: pointer;
+    background: magenta;
+}
+
+.sub-image .image-item img.focused{
+    border: 3px solid mediumseagreen;
+}
+
+.sub-image .image-item.empty{
+    opacity: 0.5;
+}
+
+
+
+.sub-image .image-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .sub-image .image-item:hover{
+    
+} */
+
+
 
 

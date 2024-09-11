@@ -103,6 +103,7 @@ productList.forEach(product => {
 
     let image = document.createElement('img');
     image.src = product.Image;
+    image.alt = "images no provided";
     cardImage.appendChild(image);
 
 
@@ -146,5 +147,40 @@ productList.forEach(product => {
 
 
 });
+
+
+// make the popup apear and disappear
+
+
+// image switcher for the popup 
+
+
+// let thumbnails = document.querySelectorAll('.image-popup .sub-image');
+let mainImage = document.querySelector('.main-image img');
+
+
+// mainImage.forEach(thumbnail =>{
+//     thumbnail.classList.remove('clicked');
+// })
+
+
+// JavaScript to switch images
+function switchImage(thumbnail) {
+    // Get the source of the clicked thumbnail image
+    const newMainImageSrc = thumbnail.src;
+    
+    // Update the main image's source to the clicked thumbnail's source
+    mainImage.src = newMainImageSrc;
+    
+    // Remove the 'clicked' class from all thumbnails to remove the gray overlay
+    const allThumbnails = document.querySelectorAll('.image-item img');
+    allThumbnails.forEach(img => img.classList.remove('focused'));
+    
+    // Add the 'clicked' class to the clicked thumbnail for the gray overlay
+    thumbnail.classList.add('focused');
+}
+
+
+
 
 
