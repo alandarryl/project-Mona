@@ -300,14 +300,17 @@ a{
 
 
 #product-popup {
-    position: absolute;
+    position: fixed; /* Change to fixed so popup stays in view */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Aligns the popup perfectly in the center */
     width: 90%;
     background-color: gray;
     padding: 12px;
     opacity: 0; /* Ensure the default state is invisible */
     transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
     pointer-events: none; /* Disable pointer events when invisible */
-    /* Optional: height or other properties can also be animated */
+    z-index: 999; /* Ensure the popup appears above other elements */
 }
 
 #product-popup.appear {
@@ -373,6 +376,20 @@ a{
     height: 20%;
     width: 100%;
 }
+
+/* Empty sub-image overlay */
+.empty-subimage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 9px;
+}
+
 
 .sub-image .image-item{
     cursor: pointer;

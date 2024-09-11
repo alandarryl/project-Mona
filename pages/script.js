@@ -42,6 +42,132 @@ function previous() {
 }
 
 
+// // trial
+
+// // product list
+// let productList = [
+//     {
+//         id : '1',
+//         Image : '../assets/images/product1.jpg',
+//         title : 'products 1',
+//         description : 'this is product 1',
+//         subImages: [ // Add sub-images if available
+//             '../assets/images/product1.jpg',
+//             '../assets/images/product2.jpg',
+//             '../assets/images/product3.jpg'
+//         ]
+//     },
+//     {
+//         id : '2',
+//         Image : '../assets/images/product2.jpg',
+//         title : 'products 2',
+//         description : 'this is product 2',
+//         subImages: [] // No sub-images
+//     },
+//     {
+//         id : '3',
+//         Image : '../assets/images/product3.jpg',
+//         title : 'products 3',
+//         description : 'this is product 3',
+//         subImages: [ // Add sub-images if available
+//             '../assets/images/product1.jpg',
+//             '../assets/images/product2.jpg'
+//         ]
+//     },
+//     // ... other products
+// ];
+
+// let products = document.getElementById('products');
+
+// // make the popup appear and disappear
+// const popup = document.getElementById('product-popup');
+// let popupTitle = document.querySelector('.popup-content h2');
+// let popupDescription = document.querySelector('.popup-content p');
+// let popupImage = document.querySelector('.main-image img');
+// let subImageContainer = document.querySelector('.sub-image');
+
+// // Function to populate and show the popup
+// function showPopup(product) {
+//     popupTitle.textContent = product.title;
+//     popupDescription.textContent = product.description;
+//     popupImage.src = product.Image;
+
+//     // Clear existing sub-images
+//     subImageContainer.innerHTML = '';
+
+//     if (product.subImages.length > 0) {
+//         // Show sub-images
+//         product.subImages.forEach(subImage => {
+//             let imageItem = document.createElement('div');
+//             imageItem.className = 'image-item';
+//             let img = document.createElement('img');
+//             img.src = subImage;
+//             img.alt = 'Thumbnails';
+//             img.onclick = () => switchImage(img);
+//             imageItem.appendChild(img);
+//             subImageContainer.appendChild(imageItem);
+//         });
+//     } else {
+//         // No sub-images available
+//         subImageContainer.innerHTML = '<div class="empty-subimage">No images available</div>';
+//     }
+
+//     // Show the popup
+//     popup.classList.add('appear');
+// }
+
+// // Function to hide the popup
+// function closePopup() {
+//     popup.classList.remove('appear');
+// }
+
+// // Function to switch the main image
+// function switchImage(img) {
+//     popupImage.src = img.src;
+//     // Handle fading out and in
+//     popupImage.classList.add('fade-out');
+//     setTimeout(() => {
+//         popupImage.classList.remove('fade-out');
+//     }, 400);
+// }
+
+// // Create product cards
+// productList.forEach(product => {
+//     let card = document.createElement('div');
+//     card.className = 'card';
+//     products.appendChild(card);
+
+//     let cardImage = document.createElement('div');
+//     cardImage.className = 'card-image';
+//     card.appendChild(cardImage);
+
+//     let image = document.createElement('img');
+//     image.src = product.Image;
+//     image.alt = "images not provided";
+//     cardImage.appendChild(image);
+
+//     let cardContent = document.createElement('div');
+//     cardContent.className = 'card-content';
+//     card.appendChild(cardContent);
+
+//     let cardTitle = document.createElement('h2');
+//     cardTitle.textContent = product.title;
+//     cardContent.appendChild(cardTitle);
+
+//     let cardDescription = document.createElement('p');
+//     cardDescription.textContent = product.description;
+//     cardContent.appendChild(cardDescription);
+
+//     let cardButton = document.createElement('button');
+//     cardButton.textContent = 'Voir plus';
+//     cardButton.className = "btn";
+//     cardButton.addEventListener("click", () => showPopup(product));
+
+//     cardContent.appendChild(cardButton);
+// });
+
+
+
 // product list
 
 
@@ -239,6 +365,15 @@ function switchImage(thumbnail) {
     thumbnail.classList.add('focused');
 }
 
+// popup population
 
 
+function showPopup(product) {
+    popupTitle.textContent = product.title;
+    popupDescription.textContent = product.description;
+    popupImage.src = product.Image;
+    
+    // Show the popup
+    popup.classList.add('appear');
+}
 
