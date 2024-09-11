@@ -178,6 +178,7 @@ a{
     cursor: pointer;
     border: none;
     background: green;
+    color: #fff;
     border-radius: 50%;
     padding: 12px;
 }
@@ -298,19 +299,26 @@ a{
 /* POPUP CARD STYLING  */
 
 
-#product-popup{
+#product-popup {
     position: absolute;
     width: 90%;
-    /* display: none; */
     background-color: gray;
     padding: 12px;
-    height: 80vh;
+    opacity: 0; /* Ensure the default state is invisible */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+    pointer-events: none; /* Disable pointer events when invisible */
+    /* Optional: height or other properties can also be animated */
+}
+
+#product-popup.appear {
+    opacity: 1; /* Visible state */
+    pointer-events: auto; /* Enable pointer events when visible */
 }
 
 .popup-card{
     width: 100%;
     position: relative;
-    background: yellow;
+    /* background: yellow; */
     display: flex;
     height: 100%;
 }
@@ -328,11 +336,11 @@ a{
 
 .image-popup, .popup-content{
     flex-basis: 50%;
-    background-color:green;
+    /* background-color:green; */
 }
 
 .popup-card .image-popup{
-    background: yellow;
+    /* background: yellow; */
     display: flex;
     flex-direction: column;
 }
@@ -340,33 +348,41 @@ a{
 .main-image{
     width: 100%;
     height: 75%;
-    background-color: blue;
+    /* background-color: blue; */
     margin-bottom: 5%;
     object-fit: cover;
+    background: #eee;
+    border-radius: 9px;
 }
 
 .main-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+        /* Add transition for smooth effect */
+        transition: opacity 0.4s ease-in-out;
+        opacity: 1;
+    border-radius: 9px;
 }
 
 .sub-image{
     display: flex;
     justify-content: space-between;
     gap: 5px;
-    background: blueviolet;
+    /* background: blueviolet; */
     height: 20%;
     width: 100%;
 }
 
 .sub-image .image-item{
     cursor: pointer;
-    background: magenta;
+    /* background: magenta; */
+    border-radius: 9px;
 }
 
 .sub-image .image-item img.focused{
     border: 3px solid mediumseagreen;
+    transform: scale(1.05); /* Slight zoom-in effect */
 }
 
 .sub-image .image-item.empty{
@@ -374,17 +390,57 @@ a{
 }
 
 
-
+/* Smooth transition for focused thumbnails */
 .sub-image .image-item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: border 0.3s ease-in-out;
+    border-radius: 9px;
 }
 
-/* .sub-image .image-item:hover{
-    
-} */
+/* Add a fade-out effect when switching images */
+.main-image img.fade-out {
+    opacity: 0;
+}
+
+.sub-image .image-item:hover{
+    opacity: 0.8;
+}
+
+.popup-content{
+    color: #fff;
+    padding: 25px;
+}
+
+.popup-content h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.popup-content p{
+    margin-bottom: 35px;
+}
+
+.popup-content ul li{
+    margin-bottom: 15px;
+}
+
+.popup-content ul li span{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.popup-content ul{
+    margin-bottom: 55px;
+}
 
 
 
-
+.popup-content .dispo{
+    text-align: center;
+    font-size: 25px;
+    color: greenyellow;
+}

@@ -80,6 +80,12 @@ let productList = [
 
 let products = document.getElementById('products');
 
+// make the popup apear and disappear
+const popup = document.getElementById('product-popup');
+let popupTitle = document.querySelector('.popup-content h2');
+
+
+
 
 productList.forEach(product => {
     
@@ -137,7 +143,19 @@ productList.forEach(product => {
     let cardButton = document.createElement('button');
     cardButton.textContent = 'Voir plus';
     cardButton.className="btn";
-    // cardButton.addEventListener("click", displayPopup);
+    // cardButton.addEventListener("click", togglePopup);
+    cardButton.addEventListener("click",
+        function togglePopup() {
+    
+            // Toggle the 'appear' class to show or hide the popup
+            if (popup.classList.contains('appear')) {
+                popup.classList.remove('appear'); // Fade out
+                popupTitle.innerHTML = "yuri";
+            } else {
+                popup.classList.add('appear'); // Fade in
+            }
+        }
+    );
     cardContent.appendChild(cardButton);
 
     // function displayPopup() {
@@ -149,7 +167,22 @@ productList.forEach(product => {
 });
 
 
-// make the popup apear and disappear
+
+
+// function togglePopup() {
+    
+//     // Toggle the 'appear' class to show or hide the popup
+//     if (popup.classList.contains('appear')) {
+//         popup.classList.remove('appear'); // Fade out
+//     } else {
+//         popup.classList.add('appear'); // Fade in
+//     }
+// }
+
+function closePopup(){
+    popup.classList.remove('appear');
+}
+
 
 
 // image switcher for the popup 
@@ -164,22 +197,47 @@ let mainImage = document.querySelector('.main-image img');
 // })
 
 
-// JavaScript to switch images
+// // JavaScript to switch images
+// function switchImage(thumbnail) {
+//     // Get the source of the clicked thumbnail image
+//     const newMainImageSrc = thumbnail.src;
+    
+//     // Update the main image's source to the clicked thumbnail's source
+//     mainImage.src = newMainImageSrc;
+    
+//     // Remove the 'clicked' class from all thumbnails to remove the gray overlay
+//     const allThumbnails = document.querySelectorAll('.image-item img');
+//     allThumbnails.forEach(img => img.classList.remove('focused'));
+    
+//     // Add the 'clicked' class to the clicked thumbnail for the gray overlay
+//     thumbnail.classList.add('focused');
+// }
+
+
+
+// second try
+
+
 function switchImage(thumbnail) {
-    // Get the source of the clicked thumbnail image
-    const newMainImageSrc = thumbnail.src;
-    
-    // Update the main image's source to the clicked thumbnail's source
-    mainImage.src = newMainImageSrc;
-    
-    // Remove the 'clicked' class from all thumbnails to remove the gray overlay
+    // Add fade-out class to the main image
+    mainImage.classList.add('fade-out');
+
+    // After the fade-out animation, change the image source
+    setTimeout(() => {
+        // Update the main image's source to the clicked thumbnail's source
+        mainImage.src = thumbnail.src;
+
+        // Remove the fade-out class and add fade-in effect
+        mainImage.classList.remove('fade-out');
+    }, 400); // This timeout should match the duration of the CSS transition (0.3s)
+
+    // Remove the 'focused' class from all thumbnails
     const allThumbnails = document.querySelectorAll('.image-item img');
     allThumbnails.forEach(img => img.classList.remove('focused'));
-    
-    // Add the 'clicked' class to the clicked thumbnail for the gray overlay
+
+    // Add the 'focused' class to the clicked thumbnail
     thumbnail.classList.add('focused');
 }
-
 
 
 
